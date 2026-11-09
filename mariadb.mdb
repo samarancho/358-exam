@@ -1,0 +1,60 @@
+-- MariaDB dump for EX358 practice (Q16-Q18)
+-- Restore into an existing database:  mysql -u root -p Contacts < mariadb.mdb
+-- The dump has no CREATE DATABASE / USE, like the exam file.
+
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Table structure for table `user_logon`
+--
+
+DROP TABLE IF EXISTS `user_logon`;
+CREATE TABLE `user_logon` (
+  `UserID` int(11) NOT NULL,
+  `FirstName` varchar(50) NOT NULL,
+  `LastName` varchar(50) NOT NULL,
+  `Username` varchar(50) NOT NULL,
+  `Password` varchar(50) NOT NULL,
+  PRIMARY KEY (`UserID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `user_logon` VALUES
+(1,'John','Smith','jsmith','redhat'),
+(2,'Anna','Bell','abell','summer'),
+(3,'Jacques','Moreau','jmoreau','dauphin'),
+(4,'Martin','Clark','mclark','monkey'),
+(5,'Susan','Lee','slee','sunshine'),
+(6,'Martin','Ford','mford','letmein'),
+(7,'Claire','Dubois','cdubois','dauphine'),
+(8,'Martin','Lopez','mlopez','qwerty'),
+(9,'Peter','Novak','pnovak','password1'),
+(10,'Martina','Ruiz','mruiz','tiger'),
+(11,'Martin','Webb','mwebb','dragon'),
+(12,'Olga','Petrova','opetrova','welcome');
+
+--
+-- Table structure for table `user_reside`
+--
+
+DROP TABLE IF EXISTS `user_reside`;
+CREATE TABLE `user_reside` (
+  `UserID` int(11) NOT NULL,
+  `Name` varchar(50) NOT NULL,
+  `City` varchar(50) NOT NULL,
+  `State` varchar(20) NOT NULL,
+  PRIMARY KEY (`UserID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `user_reside` VALUES
+(1,'John','Austin','TX'),
+(2,'Anna','Cupertino','CA'),
+(3,'Jacques','Paris','FR'),
+(4,'Martin','Cupertino','CA'),
+(5,'Susan','Raleigh','NC'),
+(6,'Martin','Cupertino','CA'),
+(7,'Claire','Cupertino','CA'),
+(8,'Martin','San Jose','CA'),
+(9,'Peter','Cupertino','CA'),
+(10,'Martina','Cupertino','CA'),
+(11,'Martin','Cupertino','CA'),
+(12,'Olga','Raleigh','NC');
