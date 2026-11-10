@@ -1,0 +1,16 @@
+# EX358 Q19 — NGINX site configuration (deployed by Ansible to /etc/nginx/conf.d/webserver.conf)
+server {
+    listen       80;
+    listen       [::]:80;
+    server_name  {{ ansible_facts['fqdn'] }} {{ ansible_facts['hostname'] }};
+
+    root         /srv/www/html;
+    index        index.html;
+
+    access_log   /var/log/nginx/webserver_access.log;
+    error_log    /var/log/nginx/webserver_error.log;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}
